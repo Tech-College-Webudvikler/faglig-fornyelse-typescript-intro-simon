@@ -1,29 +1,18 @@
 import React, { useState } from 'react';
 import Modal from './components/Modal';
+import './App.css'; 
 
 const App: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh', // Full viewport height
-        margin: 0, 
-      }}
-    >
-      <button
-        style={{
-          padding: '10px 20px',
-          fontSize: '16px',
-          cursor: 'pointer',
-        }}
-        onClick={() => setIsModalOpen(true)}
-      >
+    <div className="container">
+      {/* open modal button */}
+      <button className="button" onClick={() => setIsModalOpen(true)}>
         Open Modal
       </button>
+
+      {/* Modal component */}
       <Modal
         isOpen={isModalOpen}
         setIsOpen={setIsModalOpen}
